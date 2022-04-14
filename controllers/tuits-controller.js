@@ -30,14 +30,14 @@ const updateTuit = async (req, res) => {
     const updatedTuit = req.body;
     const status = await tuitsDao.updateTuit(tuitIdToUpdate, updatedTuit);
     // tuits = tuits.map(t=> t._id === tuitIdToUpdate ? updatedTuit : t);
-    res.sendStatus(200);
+    res.send(status);
 }
 
 const deleteTuit = async (req, res) => {
     const tuitIdToDelete = req.params.tid;
     const status = await tuitsDao.deleteTuit(tuitIdToDelete);
     // tuits = tuits.filter(t => t._id !== tuitIdToDelete);
-    res.sendStatus(200);
+    res.send(status);
 }
 
 export default tuitsController;
